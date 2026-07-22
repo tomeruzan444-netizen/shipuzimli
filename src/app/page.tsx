@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site, serviceGroups } from "@/config/site";
-import { getPageTitle, getPageBySlug } from "@/lib/content";
+import { getPageKeyword, getPageBySlug } from "@/lib/content";
 
 /** צבע ייחודי לכל קבוצת שירותים בכרטיסים */
 const GROUP_STYLES = [
@@ -196,5 +196,5 @@ export default function HomePage() {
 }
 
 function ServiceLinkTitle({ slug }: { slug: string }) {
-  return <>{getPageBySlug(slug) ? getPageTitle(slug) : slug.replace(/-/g, " ")}</>;
+  return <>{getPageBySlug(slug) ? getPageKeyword(slug) : slug.replace(/-/g, " ")}</>;
 }

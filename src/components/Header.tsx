@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { site, corePages } from "@/config/site";
+import { site, serviceGroups, corePages } from "@/config/site";
+import { getPageKeyword } from "@/lib/content";
 
 export default function Header() {
   return (
@@ -19,16 +20,31 @@ export default function Header() {
             {site.phone}
           </a>
         </div>
-        <nav aria-label="ניווט ראשי" className="flex flex-wrap gap-x-6 gap-y-1 pb-3 text-sm font-medium">
+        <nav aria-label="ניווט ראשי" className="flex flex-wrap items-center gap-x-5 gap-y-1 pb-3 text-sm font-medium">
           {corePages.map((p) => (
-            <Link key={p.slug} href={`/${p.slug}`} className="text-ink-700 hover:text-brand-600">
+            <Link key={p.slug} href={`/${p.slug}`} className="py-1 text-ink-700 hover:text-brand-600">
               {p.title}
             </Link>
           ))}
-          <Link href="/apartment-renovation" className="text-ink-700 hover:text-brand-600">שיפוץ דירה</Link>
-          <Link href="/bathroom-renovation" className="text-ink-700 hover:text-brand-600">שיפוץ אמבטיה</Link>
-          <Link href="/apartment-painting" className="text-ink-700 hover:text-brand-600">צביעת דירה</Link>
-          <Link href="/roof-waterproofing" className="text-ink-700 hover:text-brand-600">איטום גגות</Link>
+          {serviceGroups.map((group) => (
+            <details key={group.title} className="group relative">
+              <summary className="cursor-pointer list-none py-1 text-ink-700 marker:content-none hover:text-brand-600 group-open:text-brand-600 group-open:underline group-open:underline-offset-4">
+                {group.title}
+              </summary>
+              <ul className="absolute right-0 z-50 mt-1 max-h-96 min-w-56 overflow-y-auto rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
+                {group.slugs.map((slug) => (
+                  <li key={slug}>
+                    <Link
+                      href={`/${slug}`}
+                      className="block px-4 py-2 text-ink-700 hover:bg-brand-50 hover:text-brand-600"
+                    >
+                      {getPageKeyword(slug)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))}
         </nav>
       </div>
     </header>

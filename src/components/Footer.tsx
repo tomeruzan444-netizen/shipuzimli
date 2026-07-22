@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site, serviceGroups, corePages, legalPages } from "@/config/site";
-import { getPageTitle } from "@/lib/content";
+import { getPageKeyword } from "@/lib/content";
 
 export default function Footer() {
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
 function FooterLink({ slug }: { slug: string }) {
   return (
     <Link href={`/${slug}`} className="hover:text-white">
-      {getPageTitle(slug)}
+      {getPageKeyword(slug)}
     </Link>
   );
 }

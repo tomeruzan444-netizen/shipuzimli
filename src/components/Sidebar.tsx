@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/config/site";
-import { getPageTitle } from "@/lib/content";
+import { getPageKeyword } from "@/lib/content";
 
 interface SidebarProps {
   /** slugs של שירותים רלוונטיים לעמוד הנוכחי */
@@ -59,7 +59,7 @@ function SidebarList({
         {items.map((slug) => (
           <li key={slug}>
             <Link href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
-              {getPageTitle(slug)}
+              {getPageKeyword(slug)}
             </Link>
           </li>
         ))}

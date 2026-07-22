@@ -60,6 +60,12 @@ export function getPageTitle(slug: string): string {
   return getPageBySlug(slug)?.frontmatter.title ?? slug.replace(/-/g, " ");
 }
 
+/** הביטוי המרכזי של העמוד - לתוויות קצרות בפוטר ובתפריטים */
+export function getPageKeyword(slug: string): string {
+  const fm = getPageBySlug(slug)?.frontmatter;
+  return fm?.keyword ?? fm?.title ?? slug.replace(/-/g, " ");
+}
+
 /** "יולי 2026" - מתוך frontmatter.updated או חודש הבנייה הנוכחי */
 export function formatUpdated(updated?: string): string {
   const months = [
