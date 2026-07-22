@@ -29,7 +29,7 @@ export default function Sidebar({ services, areas = [], currentSlug }: SidebarPr
           חייגו: {site.phone}
         </a>
         <Link
-          href="/צור-קשר"
+          href="/contact"
           className="mt-2 block rounded-lg border border-white/60 py-2.5 text-center text-sm font-bold hover:bg-brand-700"
         >
           או השאירו פרטים

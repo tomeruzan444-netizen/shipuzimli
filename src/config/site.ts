@@ -36,30 +36,30 @@ export interface ServiceGroup {
 export const serviceGroups: ServiceGroup[] = [
   {
     title: "שיפוצי דירות ובתים",
-    slugs: ["שיפוץ-דירה", "שיפוץ-בית", "שיפוץ-בית-פרטי", "שיפוצים-כלליים"],
+    slugs: ["shiputz-dira", "shiputz-bait", "shiputz-bait-prati", "shiputzim-klaliyim"],
   },
   {
     title: "חדרים רטובים",
-    slugs: ["שיפוץ-אמבטיה", "שיפוץ-מקלחת"],
+    slugs: ["shiputz-ambatya", "shiputz-miklachat"],
   },
   {
     title: "חללים מיוחדים",
-    slugs: ["שיפוץ-מרפסת", "שיפוץ-עליית-גג", "שיפוץ-מרתף"],
+    slugs: ["shiputz-mirpeset", "shiputz-aliyat-gag", "shiputz-martef"],
   },
   {
     title: "צבע, גבס וגמר",
-    slugs: ["צביעת-דירה", "צביעת-בית", "תקרת-גבס", "עבודות-ריצוף"],
+    slugs: ["tsviat-dira", "tsviat-bait", "tikrat-geves", "avodot-ritzuf"],
   },
   {
     title: "איטום",
-    slugs: ["איטום-גגות"],
+    slugs: ["itum-gagot"],
   },
   {
     title: "קבלן שיפוצים לפי עיר",
     slugs: [
-      "קבלן-שיפוצים-בתל-אביב",
-      "קבלן-שיפוצים-בחיפה",
-      "קבלן-שיפוצים-בבאר-שבע",
+      "kablan-shiputzim-tel-aviv",
+      "kablan-shiputzim-haifa",
+      "kablan-shiputzim-beer-sheva",
     ],
   },
 ];
@@ -75,13 +75,13 @@ export const serviceAreas: ServiceGroup[] = [];
 /** עמודי ליבה — לתפריט העליון ולפוטר */
 export const corePages = [
   { slug: "", title: "דף הבית" },
-  { slug: "אודות", title: "אודות" },
-  { slug: "צור-קשר", title: "יצירת קשר" },
+  { slug: "about", title: "אודות" },
+  { slug: "contact", title: "יצירת קשר" },
 ] as const;
 
 export const legalPages = [
-  { slug: "הצהרת-נגישות", title: "הצהרת נגישות" },
-  { slug: "מדיניות-פרטיות", title: "מדיניות פרטיות" },
+  { slug: "accessibility-statement", title: "הצהרת נגישות" },
+  { slug: "privacy-policy", title: "מדיניות פרטיות" },
 ] as const;
 
 /** כל ה-slugs של עמודי השירות, לפי סדר הקבוצות */

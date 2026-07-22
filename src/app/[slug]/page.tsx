@@ -8,18 +8,22 @@ import PriceTable from "@/components/PriceTable";
 import FaqAccordion from "@/components/FaqAccordion";
 import Callout from "@/components/Callout";
 import JsonLd from "@/components/JsonLd";
+import ContactPage, { contactMeta } from "@/components/ContactPage";
 import { getAllPages, getPageBySlug, formatUpdated } from "@/lib/content";
 import { site } from "@/config/site";
 
 export const dynamicParams = false;
 
+const CONTACT_SLUG = "contact";
+
 export function generateStaticParams() {
-  return getAllPages().map((p) => ({ slug: p.slug }));
+  // slugs חייבים להיות ASCII — שמות קבצים לא-לטיניים בתוצר שוברים את הפריסה ב-Vercel
+  return [...getAllPages().map((p) => p.slug), CONTACT_SLUG].map((slug) => ({ slug }));
 }
 
-async function resolvePage(params: Promise<{ slug: string }>) {
+async function resolveSlug(params: Promise<{ slug: string }>) {
   const { slug } = await params;
-  return getPageBySlug(decodeURIComponent(slug));
+  return decodeURIComponent(slug);
 }
 
 export async function generateMetadata({
@@ -27,7 +31,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const page = await resolvePage(params);
+  const slug = await resolveSlug(params);
+  if (slug === CONTACT_SLUG) {
+    return { ...contactMeta, alternates: { canonical: `/${CONTACT_SLUG}` } };
+  }
+  const page = getPageBySlug(slug);
   if (!page) return {};
   const { frontmatter: fm } = page;
   return {
@@ -47,7 +55,9 @@ export default async function ContentPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const page = await resolvePage(params);
+  const slug = await resolveSlug(params);
+  if (slug === CONTACT_SLUG) return <ContactPage />;
+  const page = getPageBySlug(slug);
   if (!page) notFound();
   const { frontmatter: fm } = page;
   const isService = page.kind === "services" || page.kind === "areas";
@@ -124,7 +134,7 @@ function CtaStrip() {
           חייגו: {site.phone}
         </a>
         <Link
-          href="/צור-קשר"
+          href="/contact"
           className="rounded-lg border border-white/70 px-5 py-2.5 font-bold hover:bg-brand-700"
         >
           השאירו פרטים

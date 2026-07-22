@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 import { site } from "@/config/site";
 
-export const metadata: Metadata = {
+export const contactMeta = {
   title: "יצירת קשר — הצעת מחיר לשיפוץ ללא התחייבות",
   description:
     "צרו קשר עם שיפוצים לי: טלפון, וואטסאפ או טופס קצר — ונחזור אליכם עם הצעת מחיר משתלמת לשיפוץ, בלי התחייבות.",
-  alternates: { canonical: "/צור-קשר" },
 };
 
 export default function ContactPage() {

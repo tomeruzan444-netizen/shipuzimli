@@ -20,7 +20,7 @@ export default function HomePage() {
               חייגו: {site.phone}
             </a>
             <Link
-              href="/צור-קשר"
+              href="/contact"
               className="rounded-lg border-2 border-white px-6 py-3 text-lg font-bold hover:bg-brand-700"
             >
               קבלו הצעת מחיר
@@ -76,7 +76,7 @@ export default function HomePage() {
                 בדיוק בשביל זה קמה שיפוצים לי — ותמיד עם חיוך גדול.
               </p>
               <Link
-                href="/אודות"
+                href="/about"
                 className="mt-5 inline-block rounded-lg bg-brand-600 px-5 py-2.5 font-bold text-white hover:bg-brand-700"
               >
                 עוד עלינו

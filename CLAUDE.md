@@ -5,7 +5,8 @@
 
 ## מבנה
 
-- `content/services/<slug>.mdx` — עמודי שירות (slug בעברית = ה-URL)
+- `content/services/<slug>.mdx` — עמודי שירות (שם הקובץ = ה-slug = ה-URL)
+- **ה-slugs באנגלית/תעתיק בלבד (ASCII)** — למשל `shiputz-dira`, `tsviat-bait`. שמות קבצים בעברית שברו את הפריסה ב-Vercel; אין ליצור slug עברי
 - `content/pages/<slug>.mdx` — עמודי מידע (אודות, נגישות, פרטיות)
 - `content/areas/<slug>.mdx` — אזורי שירות (עתידי, הנתיב כבר נתמך)
 - `content/TEMPLATE.mdx` — תבנית לעמוד חדש
