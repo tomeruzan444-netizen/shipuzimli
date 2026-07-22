@@ -62,9 +62,15 @@ export default async function ContentPage({
   const { frontmatter: fm } = page;
   const isService = page.kind === "services" || page.kind === "areas";
 
+  const parent = fm.parent ? getPageBySlug(fm.parent) : undefined;
+  const crumbs = [
+    ...(parent ? [{ title: parent.frontmatter.title, href: `/${parent.slug}` }] : []),
+    { title: fm.title },
+  ];
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <Breadcrumbs crumbs={[{ title: fm.title }]} />
+      <Breadcrumbs crumbs={crumbs} />
       <div className="flex flex-col gap-10 lg:flex-row">
         <article className="min-w-0 flex-1">
           <header className="mb-6">

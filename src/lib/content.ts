@@ -10,6 +10,7 @@ export interface PageFrontmatter {
   keyword: string; // הביטוי המרכזי של העמוד
   updated?: string; // YYYY-MM - אם חסר, מוצג חודש הבנייה הנוכחי
   sidebar: string[]; // slugs של שירותים רלוונטיים לסיידבר
+  parent?: string; // slug של עמוד קטגוריה-אב (להיררכיית breadcrumbs)
   areas?: string[]; // slugs של אזורי שירות (ריק בשלב זה)
   prices?: {
     title: string;

@@ -40,7 +40,7 @@ export const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "חדרים רטובים",
-    slugs: ["bathroom-renovation", "shower-renovation"],
+    slugs: ["bathroom-renovation", "shower-renovation", "shower-enclosure-installation"],
   },
   {
     title: "חללים מיוחדים",
@@ -48,18 +48,38 @@ export const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "צבע, גבס וגמר",
-    slugs: ["apartment-painting", "house-painting", "drywall-ceiling", "tiling-works"],
+    slugs: ["apartment-painting", "house-painting", "drywall-ceiling", "tiling-works", "wall-cladding"],
   },
   {
-    title: "איטום",
-    slugs: ["roof-waterproofing"],
+    title: "איטום ובנייה",
+    slugs: ["roof-waterproofing", "mamad-construction", "building-contractor"],
+  },
+  {
+    title: "חוץ וגינה",
+    slugs: ["outdoor-renovation", "garden-renovation", "pergola-installation", "pool-construction"],
+  },
+  {
+    title: "בעלי מקצוע",
+    slugs: ["professionals", "painting-contractor", "professional-painter", "parquet-installer"],
   },
   {
     title: "קבלן שיפוצים לפי עיר",
     slugs: [
+      "renovation-contractors",
       "renovation-contractor-tel-aviv",
+      "renovation-contractor-jerusalem",
       "renovation-contractor-haifa",
+      "renovation-contractor-rishon-lezion",
+      "renovation-contractor-ashdod",
+      "renovation-contractor-netanya",
       "renovation-contractor-beer-sheva",
+      "renovation-contractor-ramat-gan",
+      "renovation-contractor-bat-yam",
+      "renovation-contractor-herzliya",
+      "renovation-contractor-hod-hasharon",
+      "renovation-contractor-rehovot",
+      "renovation-contractor-hadera",
+      "renovation-contractor-beer-yaakov",
     ],
   },
 ];

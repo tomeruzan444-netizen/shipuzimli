@@ -22,6 +22,8 @@
 
 **שינוי סיידבר של עמוד:** שדה `sidebar` ב-frontmatter (רשימת slugs).
 
+**היררכיה (עמודי קטגוריה):** שדה `parent: "<slug>"` ב-frontmatter משבץ את העמוד תחת עמוד-אב ב-breadcrumbs (וב-BreadcrumbList JSON-LD). עמודי הקטגוריה הקיימים: `renovation-contractors` (כל הערים), `professionals` (בעלי מקצוע), `outdoor-renovation` (חוץ וגינה). עמוד עיר חדש מקבל תמיד `parent: "renovation-contractors"` וקישור מגוף עמוד ההאב.
+
 **הוספת אזור שירות:** צור `content/areas/<slug>.mdx`, הוסף קבוצה ב-`serviceAreas` ב-site.ts, והוסף את ה-slug לשדה `areas` ב-frontmatter של השירותים הרלוונטיים — הסיידבר יציג אותו אוטומטית.
 
 ## כללי תוכן
