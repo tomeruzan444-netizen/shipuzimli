@@ -31,9 +31,15 @@ export default function Header() {
               <button
                 type="button"
                 aria-haspopup="true"
-                className="cursor-pointer py-1 text-ink-700 hover:text-brand-600 group-focus-within:text-brand-600 group-hover:text-brand-600 group-hover:underline group-hover:underline-offset-4"
+                className="flex cursor-pointer items-center gap-1 py-1 text-ink-700 hover:text-brand-600 group-focus-within:text-brand-600 group-hover:text-brand-600"
               >
                 {group.title}
+                <span
+                  aria-hidden
+                  className="text-[0.6rem] transition-transform group-focus-within:rotate-180 group-hover:rotate-180"
+                >
+                  &#x25BC;
+                </span>
               </button>
               <ul className="invisible absolute right-0 z-50 max-h-96 min-w-56 overflow-y-auto rounded-b-xl border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 {group.slugs.map((slug) => (
