@@ -5,7 +5,7 @@ import { getPageTitle } from "@/lib/content";
 interface SidebarProps {
   /** slugs של שירותים רלוונטיים לעמוד הנוכחי */
   services: string[];
-  /** slugs של אזורי שירות (ריק בשלב זה — הרכיב כבר תומך) */
+  /** slugs של אזורי שירות (ריק בשלב זה - הרכיב כבר תומך) */
   areas?: string[];
   currentSlug?: string;
 }
@@ -20,7 +20,7 @@ export default function Sidebar({ services, areas = [], currentSlug }: SidebarPr
       <div className="rounded-xl bg-brand-600 p-5 text-white">
         <h2 className="text-lg font-bold">רוצים הצעת מחיר?</h2>
         <p className="mt-1 text-sm text-brand-100">
-          שלומי וצוות בעלי המקצוע זמינים לכל שאלה — בלי התחייבות.
+          שלומי וצוות בעלי המקצוע זמינים לכל שאלה - בלי התחייבות.
         </p>
         <a
           href={`tel:${site.phoneIntl}`}

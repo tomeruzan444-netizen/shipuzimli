@@ -17,7 +17,7 @@ export default function ContactForm() {
       `פרטים: ${data.get("details")}`,
     ].join("\n");
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      "בקשה להצעת מחיר — שיפוצים לי"
+      "בקשה להצעת מחיר - שיפוצים לי"
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   }
@@ -71,7 +71,7 @@ export default function ContactForm() {
       </button>
       {sent && (
         <p role="status" className="mt-3 text-sm font-medium text-accent-700">
-          תודה! נפתחה טיוטת מייל עם הפרטים — שלחו אותה ונחזור אליכם בהקדם.
+          תודה! נפתחה טיוטת מייל עם הפרטים - שלחו אותה ונחזור אליכם בהקדם.
         </p>
       )}
       <p className="mt-3 text-xs text-ink-500">

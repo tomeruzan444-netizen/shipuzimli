@@ -17,7 +17,7 @@ export const dynamicParams = false;
 const CONTACT_SLUG = "contact";
 
 export function generateStaticParams() {
-  // slugs חייבים להיות ASCII — שמות קבצים לא-לטיניים בתוצר שוברים את הפריסה ב-Vercel
+  // slugs חייבים להיות ASCII - שמות קבצים לא-לטיניים בתוצר שוברים את הפריסה ב-Vercel
   return [...getAllPages().map((p) => p.slug), CONTACT_SLUG].map((slug) => ({ slug }));
 }
 
@@ -124,7 +124,7 @@ function CtaStrip() {
     <div className="mt-10 rounded-xl bg-gradient-to-l from-brand-600 to-brand-500 p-6 text-white">
       <h2 className="text-xl font-bold">מוכנים להתחיל?</h2>
       <p className="mt-1 text-sm text-brand-100">
-        השאירו פרטים או חייגו — ונחזור אליכם עם הצעת מחיר משתלמת, בלי התחייבות.
+        השאירו פרטים או חייגו - ונחזור אליכם עם הצעת מחיר משתלמת, בלי התחייבות.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <a

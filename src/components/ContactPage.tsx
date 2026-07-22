@@ -3,9 +3,9 @@ import ContactForm from "@/components/ContactForm";
 import { site } from "@/config/site";
 
 export const contactMeta = {
-  title: "יצירת קשר — הצעת מחיר לשיפוץ ללא התחייבות",
+  title: "יצירת קשר - הצעת מחיר לשיפוץ ללא התחייבות",
   description:
-    "צרו קשר עם שיפוצים לי: טלפון, וואטסאפ או טופס קצר — ונחזור אליכם עם הצעת מחיר משתלמת לשיפוץ, בלי התחייבות.",
+    "צרו קשר עם שיפוצים לי: טלפון, וואטסאפ או טופס קצר - ונחזור אליכם עם הצעת מחיר משתלמת לשיפוץ, בלי התחייבות.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <Breadcrumbs crumbs={[{ title: "יצירת קשר" }]} />
       <h1 className="text-3xl font-black text-ink-900 md:text-4xl">יצירת קשר</h1>
       <p className="mt-3 max-w-2xl text-ink-700">
-        מתכננים שיפוץ? השאירו פרטים בטופס או פנו אלינו ישירות — נחזור אליכם
+        מתכננים שיפוץ? השאירו פרטים בטופס או פנו אלינו ישירות - נחזור אליכם
         בהקדם עם כל המידע והצעת מחיר הוגנת, ללא כל התחייבות מצדכם.
       </p>
       <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -25,7 +25,7 @@ export default function ContactPage() {
               title: "טלפון",
               value: site.phone,
               href: `tel:${site.phoneIntl}`,
-              note: "זמינים בימים א'–ה' 8:00–19:00, ו' 8:00–13:00",
+              note: "זמינים בימים א'-ה' 8:00-19:00, ו' 8:00-13:00",
             },
             {
               title: "וואטסאפ",

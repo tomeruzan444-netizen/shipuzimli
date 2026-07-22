@@ -6,7 +6,7 @@ export default function Header() {
     <header className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex items-center justify-between py-4 gap-4">
-          <Link href="/" className="flex items-center gap-2" aria-label="שיפוצים לי — דף הבית">
+          <Link href="/" className="flex items-center gap-2" aria-label="שיפוצים לי - דף הבית">
             <span className="rounded-lg bg-brand-600 px-2.5 py-1 text-xl font-black text-white">
               שיפוצים
             </span>

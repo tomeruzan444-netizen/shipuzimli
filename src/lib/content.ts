@@ -8,7 +8,7 @@ export interface PageFrontmatter {
   metaTitle?: string; // title ל-SEO (ברירת מחדל: title)
   description: string; // meta description
   keyword: string; // הביטוי המרכזי של העמוד
-  updated?: string; // YYYY-MM — אם חסר, מוצג חודש הבנייה הנוכחי
+  updated?: string; // YYYY-MM - אם חסר, מוצג חודש הבנייה הנוכחי
   sidebar: string[]; // slugs של שירותים רלוונטיים לסיידבר
   areas?: string[]; // slugs של אזורי שירות (ריק בשלב זה)
   prices?: {
@@ -59,7 +59,7 @@ export function getPageTitle(slug: string): string {
   return getPageBySlug(slug)?.frontmatter.title ?? slug.replace(/-/g, " ");
 }
 
-/** "יולי 2026" — מתוך frontmatter.updated או חודש הבנייה הנוכחי */
+/** "יולי 2026" - מתוך frontmatter.updated או חודש הבנייה הנוכחי */
 export function formatUpdated(updated?: string): string {
   const months = [
     "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני",

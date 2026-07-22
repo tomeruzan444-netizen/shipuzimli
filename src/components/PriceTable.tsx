@@ -21,7 +21,7 @@ export default function PriceTable({ prices }: { prices: Prices }) {
             <tr key={i} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
               <td className="p-3 font-medium text-ink-900">{row.item}</td>
               <td className="p-3 whitespace-nowrap text-accent-700 font-bold">{row.price}</td>
-              <td className="p-3 text-ink-500">{row.note ?? "—"}</td>
+              <td className="p-3 text-ink-500">{row.note ?? "-"}</td>
             </tr>
           ))}
         </tbody>
