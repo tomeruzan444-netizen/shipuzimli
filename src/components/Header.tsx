@@ -25,10 +25,10 @@ export default function Header() {
               {p.title}
             </Link>
           ))}
-          <Link href="/shiputz-dira" className="text-ink-700 hover:text-brand-600">שיפוץ דירה</Link>
-          <Link href="/shiputz-ambatya" className="text-ink-700 hover:text-brand-600">שיפוץ אמבטיה</Link>
-          <Link href="/tsviat-dira" className="text-ink-700 hover:text-brand-600">צביעת דירה</Link>
-          <Link href="/itum-gagot" className="text-ink-700 hover:text-brand-600">איטום גגות</Link>
+          <Link href="/apartment-renovation" className="text-ink-700 hover:text-brand-600">שיפוץ דירה</Link>
+          <Link href="/bathroom-renovation" className="text-ink-700 hover:text-brand-600">שיפוץ אמבטיה</Link>
+          <Link href="/apartment-painting" className="text-ink-700 hover:text-brand-600">צביעת דירה</Link>
+          <Link href="/roof-waterproofing" className="text-ink-700 hover:text-brand-600">איטום גגות</Link>
         </nav>
       </div>
     </header>

@@ -36,30 +36,30 @@ export interface ServiceGroup {
 export const serviceGroups: ServiceGroup[] = [
   {
     title: "שיפוצי דירות ובתים",
-    slugs: ["shiputz-dira", "shiputz-bait", "shiputz-bait-prati", "shiputzim-klaliyim"],
+    slugs: ["apartment-renovation", "home-renovation", "private-house-renovation", "general-renovations"],
   },
   {
     title: "חדרים רטובים",
-    slugs: ["shiputz-ambatya", "shiputz-miklachat"],
+    slugs: ["bathroom-renovation", "shower-renovation"],
   },
   {
     title: "חללים מיוחדים",
-    slugs: ["shiputz-mirpeset", "shiputz-aliyat-gag", "shiputz-martef"],
+    slugs: ["balcony-renovation", "attic-renovation", "basement-renovation"],
   },
   {
     title: "צבע, גבס וגמר",
-    slugs: ["tsviat-dira", "tsviat-bait", "tikrat-geves", "avodot-ritzuf"],
+    slugs: ["apartment-painting", "house-painting", "drywall-ceiling", "tiling-works"],
   },
   {
     title: "איטום",
-    slugs: ["itum-gagot"],
+    slugs: ["roof-waterproofing"],
   },
   {
     title: "קבלן שיפוצים לפי עיר",
     slugs: [
-      "kablan-shiputzim-tel-aviv",
-      "kablan-shiputzim-haifa",
-      "kablan-shiputzim-beer-sheva",
+      "renovation-contractor-tel-aviv",
+      "renovation-contractor-haifa",
+      "renovation-contractor-beer-sheva",
     ],
   },
 ];
