@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-ink-900: #1e293b;
+  --color-ink-700: #334155;
+  --color-ink-500: #64748b;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+  --font-sans: var(--font-heebo), "Heebo", "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink-900 antialiased;
+}
+
+/* טיפוגרפיה לעמודי תוכן (MDX) */
+.prose-he {
+  @apply text-ink-700 leading-relaxed;
+}
+.prose-he h2 {
+  @apply text-2xl font-bold text-ink-900 mt-10 mb-4;
+}
+.prose-he h3 {
+  @apply text-xl font-bold text-ink-900 mt-8 mb-3;
+}
+.prose-he p {
+  @apply mb-4;
+}
+.prose-he ul {
+  @apply list-disc pr-6 mb-4 space-y-1.5;
+}
+.prose-he ol {
+  @apply list-decimal pr-6 mb-4 space-y-1.5;
+}
+.prose-he a {
+  @apply text-brand-600 font-medium underline underline-offset-2 hover:text-brand-700;
+}
+.prose-he strong {
+  @apply text-ink-900;
+}
+.prose-he table {
+  @apply w-full text-sm border-collapse mb-6;
+}
+.prose-he th {
+  @apply bg-brand-50 text-ink-900 font-bold p-3 text-right border border-brand-100;
+}
+.prose-he td {
+  @apply p-3 border border-slate-200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
