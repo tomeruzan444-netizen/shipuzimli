@@ -14,14 +14,8 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
             key={i}
             className="group rounded-xl border border-slate-200 bg-white open:border-brand-500"
           >
-            <summary className="flex cursor-pointer items-center justify-between gap-3 p-4 font-bold text-ink-900 marker:content-none">
+            <summary className="cursor-pointer p-4 font-bold text-ink-900 marker:content-none hover:text-brand-600">
               {item.q}
-              <span
-                aria-hidden
-                className="text-brand-600 transition-transform group-open:rotate-45"
-              >
-                +
-              </span>
             </summary>
             <p className="border-t border-slate-100 p-4 text-ink-700 leading-relaxed">
               {item.a}

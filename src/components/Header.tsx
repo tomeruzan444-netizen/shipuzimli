@@ -16,7 +16,7 @@ export default function Header() {
             href={`tel:${site.phoneIntl}`}
             className="rounded-lg bg-accent-600 px-4 py-2 text-sm font-bold text-white hover:bg-accent-700"
           >
-            ☎ {site.phone}
+            {site.phone}
           </a>
         </div>
         <nav aria-label="ניווט ראשי" className="flex flex-wrap gap-x-6 gap-y-1 pb-3 text-sm font-medium">

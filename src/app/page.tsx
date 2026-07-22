@@ -2,21 +2,21 @@ import Link from "next/link";
 import { site, serviceGroups } from "@/config/site";
 import { getPageTitle, getPageBySlug } from "@/lib/content";
 
-/** עיצוב מחזורי לכרטיסי קבוצות השירות - אייקון + צבע ייחודי לכל קבוצה */
+/** צבע ייחודי לכל קבוצת שירותים בכרטיסים */
 const GROUP_STYLES = [
-  { icon: "🏠", top: "border-t-orange-500", chip: "bg-orange-100 text-orange-700" },
-  { icon: "🛁", top: "border-t-sky-500", chip: "bg-sky-100 text-sky-700" },
-  { icon: "🪜", top: "border-t-violet-500", chip: "bg-violet-100 text-violet-700" },
-  { icon: "🎨", top: "border-t-rose-500", chip: "bg-rose-100 text-rose-700" },
-  { icon: "💧", top: "border-t-teal-500", chip: "bg-teal-100 text-teal-700" },
-  { icon: "📍", top: "border-t-green-600", chip: "bg-green-100 text-green-700" },
+  "border-t-orange-500",
+  "border-t-sky-500",
+  "border-t-violet-500",
+  "border-t-rose-500",
+  "border-t-teal-500",
+  "border-t-green-600",
 ];
 
 const HIGHLIGHTS = [
-  { icon: "👍", color: "bg-amber-100", title: "בעלי מקצוע מומלצים", text: "רק קבלנים אמינים עם תודעת שירות גבוהה" },
-  { icon: "⏱️", color: "bg-sky-100", title: "חוסכים לכם זמן", text: "במקום שעות של חיפושים - מענה תוך רגעים ספורים" },
-  { icon: "₪", color: "bg-green-100", title: "מוזילים עלויות", text: "השוואת מחירים שקופה שמשאירה כסף בכיס" },
-  { icon: "😊", color: "bg-rose-100", title: "שירות עם חיוך", text: "ליווי אישי של שלומי וצוותו לאורך כל הדרך" },
+  { color: "border-r-amber-400", title: "בעלי מקצוע מומלצים", text: "רק קבלנים אמינים עם תודעת שירות גבוהה" },
+  { color: "border-r-sky-400", title: "חוסכים לכם זמן", text: "במקום שעות של חיפושים - מענה תוך רגעים ספורים" },
+  { color: "border-r-green-500", title: "מוזילים עלויות", text: "השוואת מחירים שקופה שמשאירה כסף בכיס" },
+  { color: "border-r-rose-400", title: "שירות עם חיוך", text: "ליווי אישי של שלומי וצוותו לאורך כל הדרך" },
 ];
 
 export default function HomePage() {
@@ -27,7 +27,7 @@ export default function HomePage() {
         <div aria-hidden className="absolute -bottom-24 right-10 h-80 w-80 rounded-full bg-amber-300/20 blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-4 py-16 text-center md:py-24">
           <span className="inline-block rounded-full bg-white/15 px-4 py-1.5 text-sm font-bold backdrop-blur">
-            🔨 משפצים? תחסכו!
+            משפצים? תחסכו!
           </span>
           <h1 className="mt-4 text-4xl font-black md:text-5xl">הגעתם למקום הנכון</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
@@ -39,17 +39,17 @@ export default function HomePage() {
               href={`tel:${site.phoneIntl}`}
               className="rounded-lg bg-white px-6 py-3 text-lg font-bold text-brand-700 shadow-lg transition hover:scale-105 hover:bg-brand-50"
             >
-              ☎ חייגו: {site.phone}
+              חייגו: {site.phone}
             </a>
             <Link
               href="/contact"
               className="rounded-lg border-2 border-white px-6 py-3 text-lg font-bold transition hover:scale-105 hover:bg-white/10"
             >
-              קבלו הצעת מחיר 🎯
+              קבלו הצעת מחיר
             </Link>
           </div>
           <p className="mt-5 text-sm text-brand-100">
-            ✓ בחינם וללא התחייבות &nbsp;•&nbsp; ✓ מענה מהיר &nbsp;•&nbsp; ✓ פריסה ארצית
+            בחינם וללא התחייבות &nbsp;•&nbsp; מענה מהיר &nbsp;•&nbsp; פריסה ארצית
           </p>
         </div>
       </section>
@@ -57,14 +57,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-12">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {HIGHLIGHTS.map((h) => (
-            <li key={h.title} className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
-              <span aria-hidden className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-xl ${h.color}`}>
-                {h.icon}
-              </span>
-              <div>
-                <h2 className="font-bold text-ink-900">{h.title}</h2>
-                <p className="mt-0.5 text-sm text-ink-500">{h.text}</p>
-              </div>
+            <li key={h.title} className={`rounded-xl border border-slate-100 border-r-4 ${h.color} bg-white p-4 shadow-sm`}>
+              <h2 className="font-bold text-ink-900">{h.title}</h2>
+              <p className="mt-0.5 text-sm text-ink-500">{h.text}</p>
             </li>
           ))}
         </ul>
@@ -78,35 +73,25 @@ export default function HomePage() {
           בחרו שירות כדי לקרוא מדריך מלא עם מחירים מעודכנים, טיפים ותשובות לשאלות נפוצות.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {serviceGroups.map((group, i) => {
-            const style = GROUP_STYLES[i % GROUP_STYLES.length];
-            return (
-              <div
-                key={group.title}
-                className={`rounded-xl border border-slate-200 border-t-4 ${style.top} bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}
-              >
-                <h3 className="mb-3 flex items-center gap-2 border-b border-slate-100 pb-3 text-lg font-bold text-ink-900">
-                  <span aria-hidden className={`flex h-9 w-9 items-center justify-center rounded-lg text-lg ${style.chip}`}>
-                    {style.icon}
-                  </span>
-                  {group.title}
-                </h3>
-                <ul className="space-y-2 text-sm">
-                  {group.slugs.map((slug) => (
-                    <li key={slug}>
-                      <Link
-                        href={`/${slug}`}
-                        className="flex items-center gap-2 text-ink-700 hover:text-brand-600"
-                      >
-                        <span aria-hidden className="text-brand-500">‹</span>
-                        <ServiceLinkTitle slug={slug} />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+          {serviceGroups.map((group, i) => (
+            <div
+              key={group.title}
+              className={`rounded-xl border border-slate-200 border-t-4 ${GROUP_STYLES[i % GROUP_STYLES.length]} bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}
+            >
+              <h3 className="mb-3 border-b border-slate-100 pb-3 text-lg font-bold text-ink-900">
+                {group.title}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {group.slugs.map((slug) => (
+                  <li key={slug}>
+                    <Link href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
+                      <ServiceLinkTitle slug={slug} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -124,13 +109,13 @@ export default function HomePage() {
               <p className="mt-3 leading-relaxed text-ink-700">
                 אחרי שנים של עבודה מול לקוחות, שלומי הבין שהדבר שהכי חסר בשוק הוא
                 שקיפות: מחירים ברורים, מידע אמין, ובעלי מקצוע שאפשר לסמוך עליהם.
-                בדיוק בשביל זה קמה שיפוצים לי - ותמיד עם חיוך גדול. 😊
+                בדיוק בשביל זה קמה שיפוצים לי - ותמיד עם חיוך גדול.
               </p>
               <Link
                 href="/about"
                 className="mt-5 inline-block rounded-lg bg-brand-600 px-5 py-2.5 font-bold text-white shadow transition hover:scale-105 hover:bg-brand-700"
               >
-                עוד עלינו ←
+                עוד עלינו
               </Link>
             </div>
             <ul className="grid grid-cols-2 gap-4 text-center">
@@ -157,30 +142,24 @@ export default function HomePage() {
         <ol className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             {
-              icon: "📞",
               circle: "bg-brand-600",
               title: "מספרים לנו מה צריך",
               text: "משאירים פרטים או מתקשרים, ומתארים בקצרה את השיפוץ המבוקש - מצביעת חדר ועד שיפוץ דירה מלא.",
             },
             {
-              icon: "📋",
               circle: "bg-sky-600",
               title: "מקבלים מידע ומחיר",
               text: "אנחנו מכווינים אתכם לבעל המקצוע המתאים, עם מידע מלא על העבודה וטווח מחירים ריאלי מראש.",
             },
             {
-              icon: "🤝",
               circle: "bg-green-600",
               title: "קובעים פגישה ומתחילים",
               text: "מתאמים פגישה עם בעל המקצוע, סוגרים הצעת מחיר מסודרת - והשיפוץ יוצא לדרך.",
             },
           ].map((step, i) => (
             <li key={step.title} className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-              <div className="mb-3 flex items-center gap-3">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-full text-lg font-black text-white ${step.circle}`}>
-                  {i + 1}
-                </div>
-                <span aria-hidden className="text-2xl">{step.icon}</span>
+              <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-full text-lg font-black text-white ${step.circle}`}>
+                {i + 1}
               </div>
               <h3 className="text-lg font-bold text-ink-900">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-700">{step.text}</p>
@@ -192,7 +171,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-l from-green-700 to-accent-600 text-white">
         <div aria-hidden className="absolute -top-10 left-1/4 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
         <div className="relative mx-auto max-w-6xl px-4 py-12 text-center">
-          <h2 className="text-2xl font-black md:text-3xl">מוכנים להתחיל לשפץ? 🚀</h2>
+          <h2 className="text-2xl font-black md:text-3xl">מוכנים להתחיל לשפץ?</h2>
           <p className="mx-auto mt-2 max-w-xl text-green-100">
             שיחה אחת - וכל המידע, המחירים ובעל המקצוע הנכון אצלכם ביד.
           </p>
@@ -201,7 +180,7 @@ export default function HomePage() {
               href={`tel:${site.phoneIntl}`}
               className="rounded-lg bg-white px-6 py-3 font-bold text-green-700 shadow-lg transition hover:scale-105"
             >
-              ☎ {site.phone}
+              {site.phone}
             </a>
             <Link
               href="/contact"

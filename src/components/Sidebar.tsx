@@ -58,11 +58,7 @@ function SidebarList({
       <ul className="space-y-2 text-sm">
         {items.map((slug) => (
           <li key={slug}>
-            <Link
-              href={`/${slug}`}
-              className="flex items-center gap-2 text-ink-700 hover:text-brand-600"
-            >
-              <span aria-hidden className="text-brand-500">‹</span>
+            <Link href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
               {getPageTitle(slug)}
             </Link>
           </li>
