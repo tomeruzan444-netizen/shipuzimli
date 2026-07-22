@@ -27,11 +27,15 @@ export default function Header() {
             </Link>
           ))}
           {serviceGroups.map((group) => (
-            <details key={group.title} className="group relative">
-              <summary className="cursor-pointer list-none py-1 text-ink-700 marker:content-none hover:text-brand-600 group-open:text-brand-600 group-open:underline group-open:underline-offset-4">
+            <div key={group.title} className="group relative">
+              <button
+                type="button"
+                aria-haspopup="true"
+                className="cursor-pointer py-1 text-ink-700 hover:text-brand-600 group-focus-within:text-brand-600 group-hover:text-brand-600 group-hover:underline group-hover:underline-offset-4"
+              >
                 {group.title}
-              </summary>
-              <ul className="absolute right-0 z-50 mt-1 max-h-96 min-w-56 overflow-y-auto rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
+              </button>
+              <ul className="invisible absolute right-0 z-50 max-h-96 min-w-56 overflow-y-auto rounded-b-xl border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 {group.slugs.map((slug) => (
                   <li key={slug}>
                     <Link
@@ -43,7 +47,7 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-            </details>
+            </div>
           ))}
         </nav>
       </div>
