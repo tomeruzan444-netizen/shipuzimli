@@ -36,19 +36,71 @@ export interface ServiceGroup {
 export const serviceGroups: ServiceGroup[] = [
   {
     title: "שיפוצי דירות ובתים",
-    slugs: ["apartment-renovation", "home-renovation", "private-house-renovation", "general-renovations"],
+    slugs: [
+      "apartment-renovation",
+      "home-renovation",
+      "private-house-renovation",
+      "general-renovations",
+      "bedroom-renovation",
+      "apartment-splitting",
+      "security-door-installation",
+    ],
+  },
+  {
+    title: "שיפוץ מסחרי",
+    slugs: ["business-renovation", "store-renovation", "restaurant-renovation"],
   },
   {
     title: "חדרים רטובים",
-    slugs: ["bathroom-renovation", "shower-renovation", "shower-enclosure-installation"],
+    slugs: [
+      "bathroom-renovation",
+      "shower-renovation",
+      "shower-enclosure-installation",
+      "bathroom-refresh",
+      "bathroom-waterproofing",
+      "bathroom-tiling",
+    ],
   },
   {
     title: "חללים מיוחדים",
     slugs: ["balcony-renovation", "attic-renovation", "basement-renovation"],
   },
   {
-    title: "צבע, גבס וגמר",
-    slugs: ["apartment-painting", "house-painting", "drywall-ceiling", "tiling-works", "wall-cladding"],
+    title: "צבע וצביעה",
+    slugs: [
+      "apartment-painting",
+      "house-painting",
+      "apartment-painting-tel-aviv",
+      "apartment-painting-jerusalem",
+      "apartment-painting-haifa",
+      "apartment-painting-beer-sheva",
+    ],
+  },
+  {
+    title: "עבודות גבס",
+    slugs: [
+      "drywall-works",
+      "drywall-ceiling",
+      "drywall-partitions",
+      "drywall-repair",
+      "drywall-room-construction",
+    ],
+  },
+  {
+    title: "תיקוני קירות",
+    slugs: [
+      "wall-repairs",
+      "wall-cracks",
+      "wall-straightening",
+      "wall-hole-repair",
+      "plaster-repairs",
+      "wall-demolition",
+      "wall-raising",
+    ],
+  },
+  {
+    title: "ריצוף וחיפוי",
+    slugs: ["tiling-works", "wall-cladding", "interior-wall-cladding"],
   },
   {
     title: "איטום ובנייה",
@@ -60,12 +112,38 @@ export const serviceGroups: ServiceGroup[] = [
   },
   {
     title: "בעלי מקצוע",
-    slugs: ["professionals", "painting-contractor", "professional-painter", "parquet-installer"],
+    slugs: [
+      "professionals",
+      "painting-contractor",
+      "professional-painter",
+      "parquet-installer",
+      "plumbing-contractor",
+    ],
+  },
+  {
+    title: "מחירונים",
+    slugs: [
+      "renovation-price-list",
+      "renovation-calculator",
+      "plumbing-price-list",
+      "painting-price-list",
+      "tiling-price-list",
+      "construction-price-list",
+      "light-construction-price-list",
+      "concrete-price-list",
+      "electrician-price-list",
+      "marble-price-list",
+      "home-inspection-price-list",
+      "roof-waterproofing-price-list",
+    ],
   },
   {
     title: "קבלן שיפוצים לפי עיר",
     slugs: [
       "renovation-contractors",
+      "renovation-contractor-center",
+      "renovation-contractor-north",
+      "renovation-contractor-south",
       "renovation-contractor-tel-aviv",
       "renovation-contractor-jerusalem",
       "renovation-contractor-haifa",
