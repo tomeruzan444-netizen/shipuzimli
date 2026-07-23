@@ -3,11 +3,56 @@ import { getPageKeyword, getPageBySlug } from "@/lib/content";
 
 const CITY_GROUP_TITLE = "קבלן שיפוצים לפי עיר";
 
+/** אייקוני SVG בקו נקי, נצבעים דרך currentColor - בצבעי האתר בלבד */
+const ICON_PATHS: Record<string, string> = {
+  badge: "M9 12l2 2 4-4 M12 3l2.1 2.1 3-.4 1.2 2.8 2.7 1.3-.4 3 2.1 2.2-2.1 2.2.4 3-2.7 1.3-1.2 2.8-3-.4L12 21l-2.1-2.1-3 .4-1.2-2.8-2.7-1.3.4-3L1.3 12l2.1-2.2-.4-3 2.7-1.3 1.2-2.8 3 .4z",
+  clock: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z M12 7v5l3.5 2",
+  coins: "M12 3C7.6 3 4 4.3 4 6s3.6 3 8 3 8-1.3 8-3-3.6-3-8-3z M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6 M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6",
+  smile: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z M9 9.5h.01 M15 9.5h.01 M8.5 14a4.5 4.5 0 0 0 7 0",
+  home: "M3 11.5 12 4l9 7.5 M5.5 10v10h13V10",
+  store: "M4 9.5 5 4h14l1 5.5 M4.5 9.5v10.5h15V9.5 M9.5 20v-5.5h5V20 M3.5 9.5h17",
+  droplet: "M12 3.5c3 4.2 6 7.4 6 10.5a6 6 0 1 1-12 0c0-3.1 3-6.3 6-10.5z",
+  stairs: "M3.5 20h4v-4h4v-4h4V8h5 M3.5 20h17",
+  roller: "M4 4.5h12v5H4z M16 6.5h4v3.5l-7.5 1.5v3 M11.5 14.5h2V20h-2z",
+  panel: "M4.5 4h15v16h-15z M4.5 12h15 M12 4v16",
+  hammer: "M13.5 4.5 19.5 10.5 16.5 13.5 10.5 7.5z M10.5 9.5 4 16v3.5h3.5L14 13",
+  grid: "M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z",
+  shield: "M12 3.5 19 6.5v5c0 4.8-3.4 7.7-7 9.5-3.6-1.8-7-4.7-7-9.5v-5z",
+  sun: "M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M12 2.5v2.5 M12 19v2.5 M4.2 4.2 6 6 M18 18l1.8 1.8 M2.5 12H5 M19 12h2.5 M4.2 19.8 6 18 M18 6l1.8-1.8",
+  wrench: "M14.5 6.2a4.2 4.2 0 0 0-5.6 5.6L4 16.7V20h3.3l4.9-4.9a4.2 4.2 0 0 0 5.6-5.6l-2.8 2.8-2.3-2.3z",
+  calculator: "M6.5 3.5h11v17h-11z M9.5 7h5 M9.5 11h.01 M14.5 11h.01 M9.5 14.5h.01 M14.5 14.5h.01 M9.5 18h5",
+  pin: "M12 21.5s-6.5-5.6-6.5-10.5a6.5 6.5 0 1 1 13 0C18.5 15.9 12 21.5 12 21.5z M12 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+  phone: "M5 4h4l1.5 4.5-2.2 1.7a13 13 0 0 0 5.5 5.5l1.7-2.2L20 15v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z",
+};
+
+function Icon({ name, className = "h-6 w-6" }: { name: keyof typeof ICON_PATHS; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d={ICON_PATHS[name]} />
+    </svg>
+  );
+}
+
+/** אייקון לכל קבוצת שירותים, לפי סדר הקבוצות ב-site.ts (ללא קבוצת הערים) */
+const GROUP_ICONS: (keyof typeof ICON_PATHS)[] = [
+  "home", "store", "droplet", "stairs", "roller", "panel",
+  "hammer", "grid", "shield", "sun", "wrench", "calculator",
+];
+
 const HIGHLIGHTS = [
-  { title: "בעלי מקצוע מומלצים", text: "רק קבלנים אמינים עם תודעת שירות גבוהה" },
-  { title: "חוסכים לכם זמן", text: "במקום שעות של חיפושים - מענה תוך רגעים ספורים" },
-  { title: "מוזילים עלויות", text: "השוואת מחירים שקופה שמשאירה כסף בכיס" },
-  { title: "שירות עם חיוך", text: "ליווי אישי של שלומי וצוותו לאורך כל הדרך" },
+  { icon: "badge" as const, title: "בעלי מקצוע מומלצים", text: "רק קבלנים אמינים עם תודעת שירות גבוהה" },
+  { icon: "clock" as const, title: "חוסכים לכם זמן", text: "במקום שעות של חיפושים - מענה תוך רגעים ספורים" },
+  { icon: "coins" as const, title: "מוזילים עלויות", text: "השוואת מחירים שקופה שמשאירה כסף בכיס" },
+  { icon: "smile" as const, title: "שירות עם חיוך", text: "ליווי אישי של שלומי וצוותו לאורך כל הדרך" },
 ];
 
 export default function HomePage() {
@@ -63,6 +108,9 @@ export default function HomePage() {
           <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((h) => (
               <li key={h.title} className="border-t-2 border-navy-900 pt-4">
+                <div className="mb-2.5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                  <Icon name={h.icon} />
+                </div>
                 <h2 className="font-bold text-navy-900">{h.title}</h2>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{h.text}</p>
               </li>
@@ -82,12 +130,17 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {serviceGroupsOnly.map((group) => (
+          {serviceGroupsOnly.map((group, i) => (
             <div
               key={group.title}
               className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-navy-700 hover:shadow-md"
             >
-              <h3 className="mb-1 text-lg font-bold text-navy-900">{group.title}</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900">
+                  <Icon name={GROUP_ICONS[i % GROUP_ICONS.length]} className="h-5.5 w-5.5" />
+                </span>
+                <h3 className="text-lg font-bold text-navy-900">{group.title}</h3>
+              </div>
               <div aria-hidden className="mb-4 h-0.5 w-8 bg-brand-600" />
               <ul className="space-y-2.5 text-sm">
                 {group.slugs.map((slug) => (
@@ -111,7 +164,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl px-4 py-16">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div className="max-w-2xl">
-                <p className="mb-2 text-sm font-bold text-brand-600">פריסה ארצית</p>
+                <p className="mb-2 flex items-center gap-1.5 text-sm font-bold text-brand-600">
+                  <Icon name="pin" className="h-4 w-4" />
+                  פריסה ארצית
+                </p>
                 <h2 className="text-3xl font-black text-navy-900">קבלן שיפוצים לפי עיר</h2>
                 <p className="mt-3 text-ink-500">
                   מדריך מקומי לכל עיר: מחירים אזוריים, מאפייני הבנייה המקומית וקבלנים
@@ -226,8 +282,9 @@ export default function HomePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href={`tel:${site.phoneIntl}`}
-              className="rounded-lg bg-brand-600 px-7 py-3.5 font-bold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700"
+              className="flex items-center gap-2 rounded-lg bg-brand-600 px-7 py-3.5 font-bold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700"
             >
+              <Icon name="phone" className="h-5 w-5" />
               {site.phone}
             </a>
             <a
