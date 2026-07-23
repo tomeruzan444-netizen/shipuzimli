@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Sidebar from "@/components/Sidebar";
@@ -85,7 +84,6 @@ export default async function ContentPage({
               components={{
                 PriceTable: () => (fm.prices ? <PriceTable prices={fm.prices} /> : null),
                 Callout,
-                Link,
               }}
             />
           </div>
@@ -139,12 +137,12 @@ function CtaStrip() {
         >
           חייגו: {site.phone}
         </a>
-        <Link
+        <a
           href="/contact"
           className="rounded-lg border border-white/25 px-5 py-2.5 font-bold hover:border-white/60 hover:bg-white/5"
         >
           השאירו פרטים
-        </Link>
+        </a>
       </div>
     </div>
   );

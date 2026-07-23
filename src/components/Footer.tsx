@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site, serviceGroups, corePages, legalPages } from "@/config/site";
 import { getPageKeyword } from "@/lib/content";
 
@@ -24,9 +23,9 @@ export default function Footer() {
             <ul className="space-y-1.5 text-sm">
               {[...corePages, ...legalPages].map((p) => (
                 <li key={p.slug}>
-                  <Link href={`/${p.slug}`} className="hover:text-white">
+                  <a href={`/${p.slug}`} className="hover:text-white">
                     {p.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -47,8 +46,8 @@ export default function Footer() {
 
 function FooterLink({ slug }: { slug: string }) {
   return (
-    <Link href={`/${slug}`} className="hover:text-white">
+    <a href={`/${slug}`} className="hover:text-white">
       {getPageKeyword(slug)}
-    </Link>
+    </a>
   );
 }

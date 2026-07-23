@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site, serviceGroups } from "@/config/site";
 import { getPageKeyword, getPageBySlug } from "@/lib/content";
 
@@ -45,12 +44,12 @@ export default function HomePage() {
               >
                 חייגו: {site.phone}
               </a>
-              <Link
+              <a
                 href="/contact"
                 className="rounded-lg border border-white/25 px-7 py-3.5 text-lg font-bold text-white transition hover:border-white/60 hover:bg-white/5"
               >
                 קבלו הצעת מחיר
-              </Link>
+              </a>
             </div>
             <p className="mt-6 text-sm text-slate-400">
               בחינם וללא התחייבות · מענה מהיר · פריסה ארצית
@@ -93,12 +92,12 @@ export default function HomePage() {
               <ul className="space-y-2.5 text-sm">
                 {group.slugs.map((slug) => (
                   <li key={slug}>
-                    <Link
+                    <a
                       href={`/${slug}`}
                       className="text-ink-700 transition hover:text-brand-600"
                     >
                       <ServiceLinkTitle slug={slug} />
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -120,23 +119,23 @@ export default function HomePage() {
                 </p>
               </div>
               {cityHubSlug && (
-                <Link
+                <a
                   href={`/${cityHubSlug}`}
                   className="rounded-lg bg-navy-900 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-800"
                 >
                   למדריך המלא
-                </Link>
+                </a>
               )}
             </div>
             <ul className="flex flex-wrap gap-2.5">
               {citySlugs.map((slug) => (
                 <li key={slug}>
-                  <Link
+                  <a
                     href={`/${slug}`}
                     className="inline-block rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-navy-900 transition hover:border-brand-600 hover:text-brand-600"
                   >
                     <ServiceLinkTitle slug={slug} />
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -159,12 +158,12 @@ export default function HomePage() {
               שקיפות: מחירים ברורים, מידע אמין, ובעלי מקצוע שאפשר לסמוך עליהם.
               בדיוק בשביל זה קמה שיפוצים לי - ותמיד עם חיוך גדול.
             </p>
-            <Link
+            <a
               href="/about"
               className="mt-6 inline-block rounded-lg bg-brand-600 px-6 py-3 font-bold text-white transition hover:bg-brand-700"
             >
               עוד עלינו
-            </Link>
+            </a>
           </div>
           <ul className="grid grid-cols-2 gap-4">
             {[
@@ -231,12 +230,12 @@ export default function HomePage() {
             >
               {site.phone}
             </a>
-            <Link
+            <a
               href="/contact"
               className="rounded-lg border border-white/25 px-7 py-3.5 font-bold transition hover:border-white/60 hover:bg-white/5"
             >
               השאירו פרטים
-            </Link>
+            </a>
           </div>
         </div>
       </section>

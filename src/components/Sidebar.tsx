@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/config/site";
 import { getPageKeyword } from "@/lib/content";
 
@@ -28,12 +27,12 @@ export default function Sidebar({ services, areas = [], currentSlug }: SidebarPr
         >
           חייגו: {site.phone}
         </a>
-        <Link
+        <a
           href="/contact"
           className="mt-2 block rounded-lg border border-white/25 py-2.5 text-center text-sm font-bold hover:border-white/60 hover:bg-white/5"
         >
           או השאירו פרטים
-        </Link>
+        </a>
       </div>
     </aside>
   );
@@ -58,9 +57,9 @@ function SidebarList({
       <ul className="space-y-2 text-sm">
         {items.map((slug) => (
           <li key={slug}>
-            <Link href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
+            <a href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
               {getPageKeyword(slug)}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

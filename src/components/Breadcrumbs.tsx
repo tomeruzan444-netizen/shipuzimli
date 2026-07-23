@@ -1,4 +1,3 @@
-import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/config/site";
 
@@ -17,9 +16,9 @@ export default function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
             <li key={i} className="flex items-center gap-1.5">
               {i > 0 && <span aria-hidden>›</span>}
               {c.href ? (
-                <Link href={c.href} className="hover:text-brand-600">
+                <a href={c.href} className="hover:text-brand-600">
                   {c.title}
-                </Link>
+                </a>
               ) : (
                 <span aria-current="page" className="font-medium text-ink-700">
                   {c.title}
