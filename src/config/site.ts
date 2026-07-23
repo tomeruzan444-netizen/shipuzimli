@@ -18,7 +18,7 @@ export const site = {
   name: "שיפוצים לי",
   tagline: "כל השיפוצים במקום אחד - קל, מהיר ומשתלם",
   // כשהדומיין shipuzimli.co.il יחובר - לעדכן כאן ל-https://shipuzimli.co.il
-  url: "https://shipuzimlii.vercel.app",
+  url: "https://shipuzimlii-tomer7.vercel.app",
   phone: "052-3464528",
   phoneIntl: "+972523464528",
   email: "shiputzli@gmail.com",

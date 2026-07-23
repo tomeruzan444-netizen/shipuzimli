@@ -73,10 +73,11 @@ export default function HomePage() {
             <p className="mb-4 inline-block border-r-4 border-brand-500 pr-3 text-sm font-bold tracking-wide text-brand-500">
               הפלטפורמה שמחברת אתכם לקבלנים הנכונים
             </p>
-            <h1 className="text-4xl font-black leading-tight md:text-6xl">
-              משפצים בראש שקט,
+            <h1 className="text-3xl font-black leading-tight md:text-5xl">
+              שיפוצים לי{" "}
+              <span className="text-brand-500">כל עבודות השיפוצים במקום אחד</span>
               <br />
-              <span className="text-brand-500">במחיר הוגן.</span>
+              - קבלן שיפוצים מוסמך באזורך
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
               שיפוצים לי מחברת אתכם לקבלני שיפוצים מנוסים בכל הארץ, עם מידע מקיף
