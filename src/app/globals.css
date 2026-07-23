@@ -23,6 +23,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* נעילת גלילה אופקית - המסך לא זז ימינה ושמאלה במובייל */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   @apply bg-white text-ink-900 antialiased;
 }
