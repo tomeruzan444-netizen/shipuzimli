@@ -8,6 +8,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import Callout from "@/components/Callout";
 import JsonLd from "@/components/JsonLd";
 import ContactPage, { contactMeta } from "@/components/ContactPage";
+import { AuthorBox, ReviewedByLine } from "@/components/AuthorBox";
 import { getAllPages, getPageBySlug, formatUpdated } from "@/lib/content";
 import { site } from "@/config/site";
 
@@ -77,6 +78,7 @@ export default async function ContentPage({
             <p className="mt-2 text-sm text-ink-500">
               <time>עודכן לאחרונה: {formatUpdated(fm.updated)}</time>
             </p>
+            <ReviewedByLine />
           </header>
           <div className="prose-he">
             <MDXRemote
@@ -88,6 +90,7 @@ export default async function ContentPage({
             />
           </div>
           {fm.faq && <FaqAccordion items={fm.faq} />}
+          <AuthorBox />
           <CtaStrip />
         </article>
         <Sidebar services={fm.sidebar} areas={fm.areas} currentSlug={page.slug} />
@@ -106,6 +109,22 @@ export default async function ContentPage({
           }}
         />
       )}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          url: `${site.url}/${page.slug}`,
+          name: fm.metaTitle ?? fm.title,
+          author: { "@type": "Organization", name: site.name, url: site.url },
+          reviewedBy: {
+            "@type": "Person",
+            name: site.founder,
+            jobTitle: "קבלן שיפוצים",
+            description: `קבלן שיפוצים עם יותר מ-${site.founderYears} שנות ניסיון`,
+            url: `${site.url}/about`,
+          },
+        }}
+      />
       {fm.faq && (
         <JsonLd
           data={{
