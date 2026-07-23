@@ -18,9 +18,9 @@ export const site = {
   name: "שיפוצים לי",
   tagline: "כל השיפוצים במקום אחד - קל, מהיר ומשתלם",
   url: "https://shipuzim-li.vercel.app",
-  phone: "052-1234567",
-  phoneIntl: "+972521234567",
-  email: "info@shipuzim-li.co.il",
+  phone: "052-3464528",
+  phoneIntl: "+972523464528",
+  email: "shiputzli@gmail.com",
   founder: "שלומי השיפוצניק",
   founderYears: 20,
   description:
