@@ -4,7 +4,7 @@ import { getPageKeyword } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="mt-16 bg-ink-900 text-slate-300">
+    <footer className="mt-16 bg-navy-950 text-slate-300">
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {serviceGroups.map((group) => (

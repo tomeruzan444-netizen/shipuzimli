@@ -65,12 +65,12 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-4 w-full rounded-lg bg-accent-600 py-3 font-bold text-white hover:bg-accent-700"
+        className="mt-4 w-full rounded-lg bg-brand-600 py-3 font-bold text-white hover:bg-brand-700"
       >
         שליחה
       </button>
       {sent && (
-        <p role="status" className="mt-3 text-sm font-medium text-accent-700">
+        <p role="status" className="mt-3 text-sm font-medium text-navy-700">
           תודה! נפתחה טיוטת מייל עם הפרטים - שלחו אותה ונחזור אליכם בהקדם.
         </p>
       )}

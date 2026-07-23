@@ -17,20 +17,20 @@ export default function Sidebar({ services, areas = [], currentSlug }: SidebarPr
       {areas.length > 0 && (
         <SidebarList title="אזורי שירות" slugs={areas} currentSlug={currentSlug} />
       )}
-      <div className="rounded-xl bg-brand-600 p-5 text-white">
+      <div className="rounded-xl bg-navy-900 p-5 text-white">
         <h2 className="text-lg font-bold">רוצים הצעת מחיר?</h2>
-        <p className="mt-1 text-sm text-brand-100">
+        <p className="mt-1 text-sm text-slate-300">
           שלומי וצוות בעלי המקצוע זמינים לכל שאלה - בלי התחייבות.
         </p>
         <a
           href={`tel:${site.phoneIntl}`}
-          className="mt-4 block rounded-lg bg-white py-2.5 text-center font-bold text-brand-700 hover:bg-brand-50"
+          className="mt-4 block rounded-lg bg-brand-600 py-2.5 text-center font-bold text-white hover:bg-brand-700"
         >
           חייגו: {site.phone}
         </a>
         <Link
           href="/contact"
-          className="mt-2 block rounded-lg border border-white/60 py-2.5 text-center text-sm font-bold hover:bg-brand-700"
+          className="mt-2 block rounded-lg border border-white/25 py-2.5 text-center text-sm font-bold hover:border-white/60 hover:bg-white/5"
         >
           או השאירו פרטים
         </Link>
@@ -52,7 +52,7 @@ function SidebarList({
   if (items.length === 0) return null;
   return (
     <nav className="rounded-xl border border-slate-200 bg-slate-50 p-5" aria-label={title}>
-      <h2 className="mb-3 border-b border-brand-500 pb-2 text-lg font-bold text-ink-900">
+      <h2 className="mb-3 border-b-2 border-navy-900 pb-2 text-lg font-bold text-navy-900">
         {title}
       </h2>
       <ul className="space-y-2 text-sm">

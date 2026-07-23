@@ -1,7 +1,7 @@
 const styles = {
-  tip: { box: "border-accent-600 bg-green-50", label: "טיפ של שלומי" },
-  info: { box: "border-brand-500 bg-brand-50", label: "כדאי לדעת" },
-  warning: { box: "border-amber-500 bg-amber-50", label: "שימו לב" },
+  tip: { box: "border-navy-700 bg-navy-50", label: "טיפ של שלומי" },
+  info: { box: "border-slate-300 bg-slate-50", label: "כדאי לדעת" },
+  warning: { box: "border-brand-600 bg-brand-50", label: "שימו לב" },
 } as const;
 
 export default function Callout({

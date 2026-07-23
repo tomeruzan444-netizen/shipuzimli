@@ -127,21 +127,21 @@ export default async function ContentPage({
 
 function CtaStrip() {
   return (
-    <div className="mt-10 rounded-xl bg-gradient-to-l from-brand-600 to-brand-500 p-6 text-white">
+    <div className="mt-10 rounded-xl bg-navy-950 p-6 text-white">
       <h2 className="text-xl font-bold">מוכנים להתחיל?</h2>
-      <p className="mt-1 text-sm text-brand-100">
+      <p className="mt-1 text-sm text-slate-300">
         השאירו פרטים או חייגו - ונחזור אליכם עם הצעת מחיר משתלמת, בלי התחייבות.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <a
           href={`tel:${site.phoneIntl}`}
-          className="rounded-lg bg-white px-5 py-2.5 font-bold text-brand-700 hover:bg-brand-50"
+          className="rounded-lg bg-brand-600 px-5 py-2.5 font-bold text-white hover:bg-brand-700"
         >
           חייגו: {site.phone}
         </a>
         <Link
           href="/contact"
-          className="rounded-lg border border-white/70 px-5 py-2.5 font-bold hover:bg-brand-700"
+          className="rounded-lg border border-white/25 px-5 py-2.5 font-bold hover:border-white/60 hover:bg-white/5"
         >
           השאירו פרטים
         </Link>

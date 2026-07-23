@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 @theme {
+  /* שני צבעים דומיננטיים בלבד: נייבי (יסוד) + כתום (הדגשה), והשאר נייטרלים */
   --color-brand-50: #fff7ed;
   --color-brand-100: #ffedd5;
   --color-brand-500: #f97316;
   --color-brand-600: #ea580c;
   --color-brand-700: #c2410c;
+  --color-navy-50: #f4f7fb;
+  --color-navy-100: #dde7f3;
+  --color-navy-700: #1f3a63;
+  --color-navy-800: #16294a;
+  --color-navy-900: #0f1d33;
+  --color-navy-950: #0b1526;
   --color-ink-900: #1e293b;
   --color-ink-700: #334155;
   --color-ink-500: #64748b;
-  --color-accent-600: #16a34a;
-  --color-accent-700: #15803d;
   --font-sans: var(--font-heebo), "Heebo", "Segoe UI", Arial, sans-serif;
 }
 

@@ -8,14 +8,14 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex items-center justify-between py-4 gap-4">
           <Link href="/" className="flex items-center gap-2" aria-label="שיפוצים לי - דף הבית">
-            <span className="rounded-lg bg-brand-600 px-2.5 py-1 text-xl font-black text-white">
+            <span className="rounded-lg bg-navy-900 px-2.5 py-1 text-xl font-black text-white">
               שיפוצים
             </span>
-            <span className="text-xl font-black text-ink-900">לי</span>
+            <span className="text-xl font-black text-brand-600">לי</span>
           </Link>
           <a
             href={`tel:${site.phoneIntl}`}
-            className="rounded-lg bg-accent-600 px-4 py-2 text-sm font-bold text-white hover:bg-accent-700"
+            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-bold text-white hover:bg-brand-700"
           >
             {site.phone}
           </a>
