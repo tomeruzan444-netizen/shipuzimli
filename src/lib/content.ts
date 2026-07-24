@@ -48,12 +48,22 @@ function readDir(kind: ContentPage["kind"]): ContentPage[] {
     });
 }
 
+/** מטמון ברמת המודול - קובצי התוכן נקראים מהדיסק פעם אחת לכל תהליך בילד */
+let pagesCache: ContentPage[] | undefined;
+let pagesBySlug: Map<string, ContentPage> | undefined;
+
 export function getAllPages(): ContentPage[] {
-  return KINDS.flatMap(readDir);
+  if (!pagesCache) {
+    pagesCache = KINDS.flatMap(readDir);
+  }
+  return pagesCache;
 }
 
 export function getPageBySlug(slug: string): ContentPage | undefined {
-  return getAllPages().find((p) => p.slug === slug);
+  if (!pagesBySlug) {
+    pagesBySlug = new Map(getAllPages().map((p) => [p.slug, p]));
+  }
+  return pagesBySlug.get(slug);
 }
 
 export function getPageTitle(slug: string): string {
