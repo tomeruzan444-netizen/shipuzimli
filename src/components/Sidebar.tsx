@@ -1,4 +1,4 @@
-import { site } from "@/config/site";
+import { site, serviceGroups } from "@/config/site";
 import { getPageKeyword } from "@/lib/content";
 
 interface SidebarProps {
@@ -9,13 +9,47 @@ interface SidebarProps {
   currentSlug?: string;
 }
 
+/** קבוצות גלובליות שמוצגות בסיידבר של כל עמודי האתר */
+const PRICE_GROUP_TITLE = "מחירונים";
+const CITY_GROUP_TITLE = "קבלן שיפוצים לפי עיר";
+const TOP_CITIES_COUNT = 7; // ההאב + הערים הגדולות
+
 export default function Sidebar({ services, areas = [], currentSlug }: SidebarProps) {
+  const priceSlugs = serviceGroups.find((g) => g.title === PRICE_GROUP_TITLE)?.slugs ?? [];
+  const citySlugs =
+    serviceGroups.find((g) => g.title === CITY_GROUP_TITLE)?.slugs.slice(0, TOP_CITIES_COUNT) ?? [];
+
   return (
     <aside className="space-y-6 lg:w-72 lg:shrink-0" aria-label="ניווט משני">
       <SidebarList title="שירותים קשורים" slugs={services} currentSlug={currentSlug} />
       {areas.length > 0 && (
         <SidebarList title="אזורי שירות" slugs={areas} currentSlug={currentSlug} />
       )}
+
+      {/* תיבת המחירונים - גלובלית בכל עמודי האתר */}
+      <nav
+        className="rounded-xl border border-navy-100 bg-navy-50 p-5"
+        aria-label="מחירוני שיפוצים"
+      >
+        <h2 className="mb-3 border-b-2 border-brand-600 pb-2 text-lg font-bold text-navy-900">
+          מחירוני 2026
+        </h2>
+        <ul className="space-y-2 text-sm">
+          {priceSlugs
+            .filter((slug) => slug !== currentSlug)
+            .map((slug) => (
+              <li key={slug}>
+                <a href={`/${slug}`} className="text-ink-700 hover:text-brand-600">
+                  {getPageKeyword(slug)}
+                </a>
+              </li>
+            ))}
+        </ul>
+      </nav>
+
+      {/* מדריכים לפי עיר - ההאב והערים המרכזיות */}
+      <SidebarList title="מדריכים לפי עיר" slugs={citySlugs} currentSlug={currentSlug} />
+
       <div className="rounded-xl bg-navy-900 p-5 text-white">
         <h2 className="text-lg font-bold">רוצים הצעת מחיר?</h2>
         <p className="mt-1 text-sm text-slate-300">
