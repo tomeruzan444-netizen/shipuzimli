@@ -48,7 +48,7 @@ export default function Sidebar({ services, areas = [], currentSlug }: SidebarPr
       </nav>
 
       {/* מדריכים לפי עיר - ההאב והערים המרכזיות */}
-      <SidebarList title="מדריכים לפי עיר" slugs={citySlugs} currentSlug={currentSlug} />
+      <SidebarList title="קבלנים לפי עיר" slugs={citySlugs} currentSlug={currentSlug} />
 
       <div className="rounded-xl bg-navy-900 p-5 text-white">
         <h2 className="text-lg font-bold">רוצים הצעת מחיר?</h2>
