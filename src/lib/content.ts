@@ -76,6 +76,35 @@ export function getPageKeyword(slug: string): string {
   return fm?.keyword ?? fm?.title ?? slug.replace(/-/g, " ");
 }
 
+/** מזהה anchor יציב מטקסט כותרת (עברית נשמרת; פיסוק מוסר) */
+export function headingId(text: string): string {
+  return text
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+export interface Heading {
+  text: string;
+  id: string;
+}
+
+/** מחלץ את כותרות ה-H2 מגוף ה-MDX, לפי סדר הופעתן, עם מזהים ייחודיים */
+export function extractHeadings(body: string): Heading[] {
+  const seen = new Map<string, number>();
+  const out: Heading[] = [];
+  for (const line of body.split(/\r?\n/)) {
+    const m = /^##\s+(.+?)\s*$/.exec(line); // רק H2 (## ) - ### לא תואם
+    if (!m) continue;
+    const text = m[1].trim();
+    const base = headingId(text);
+    const n = seen.get(base) ?? 0;
+    seen.set(base, n + 1);
+    out.push({ text, id: n > 0 ? `${base}-${n + 1}` : base });
+  }
+  return out;
+}
+
 /** "יולי 2026" - מתוך frontmatter.updated או חודש הבנייה הנוכחי */
 export function formatUpdated(updated?: string): string {
   const months = [

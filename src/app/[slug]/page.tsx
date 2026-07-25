@@ -9,7 +9,8 @@ import Callout from "@/components/Callout";
 import JsonLd from "@/components/JsonLd";
 import ContactPage, { contactMeta } from "@/components/ContactPage";
 import { AuthorBox, ReviewedByLine } from "@/components/AuthorBox";
-import { getAllPages, getPageBySlug, formatUpdated } from "@/lib/content";
+import TableOfContents from "@/components/TableOfContents";
+import { getAllPages, getPageBySlug, formatUpdated, extractHeadings } from "@/lib/content";
 import { site } from "@/config/site";
 
 export const dynamicParams = false;
@@ -68,6 +69,11 @@ export default async function ContentPage({
     { title: fm.title },
   ];
 
+  // כותרות ה-H2 לתוכן העניינים ולעיגון anchor-ים (sitelinks)
+  const headings = extractHeadings(page.body);
+  // ה-H2-ים מרונדרים בסדר הופעתם בגוף - צמדנו כל אחד ל-id המתאים לפי אינדקס
+  let headingIndex = 0;
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
       <Breadcrumbs crumbs={crumbs} />
@@ -80,12 +86,17 @@ export default async function ContentPage({
             </p>
             <ReviewedByLine />
           </header>
+          <TableOfContents headings={headings} />
           <div className="prose-he">
             <MDXRemote
               source={page.body}
               components={{
                 PriceTable: () => (fm.prices ? <PriceTable prices={fm.prices} /> : null),
                 Callout,
+                h2: (props) => {
+                  const id = headings[headingIndex++]?.id;
+                  return <h2 id={id} className="scroll-mt-6" {...props} />;
+                },
               }}
             />
           </div>
