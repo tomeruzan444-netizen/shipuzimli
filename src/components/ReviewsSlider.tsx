@@ -7,8 +7,8 @@ function Stars() {
   return (
     <div className="flex gap-0.5" aria-label="דירוג 5 מתוך 5 כוכבים">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} viewBox="0 0 20 20" aria-hidden className="h-4 w-4 fill-yellow-400">
-          <path d="M10 1.6l2.47 5 5.53.8-4 3.9.94 5.5L10 20l-4.94-2.6.94-5.5-4-3.9 5.53-.8z" />
+        <svg key={i} viewBox="0 0 24 24" aria-hidden className="h-[18px] w-[18px] fill-[#fbbc04]">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
     </div>
