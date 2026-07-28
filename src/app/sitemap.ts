@@ -6,7 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: site.url, lastModified: now, priority: 1 },
-    { url: `${site.url}/${encodeURIComponent("contact")}`, lastModified: now, priority: 0.8 },
+    { url: `${site.url}/contact`, lastModified: now, priority: 0.8 },
+    { url: `${site.url}/site-map`, lastModified: now, priority: 0.3 },
     ...getAllPages().map((p) => ({
       url: `${site.url}/${encodeURIComponent(p.slug)}`,
       lastModified: now,

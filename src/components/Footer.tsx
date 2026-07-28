@@ -28,6 +28,9 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/site-map" className="hover:text-white">מפת אתר</a>
+              </li>
             </ul>
           </nav>
         </div>
