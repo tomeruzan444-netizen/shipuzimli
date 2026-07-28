@@ -28,14 +28,14 @@ export default function Header() {
             </a>
             <a
               href={`tel:${site.phoneIntl}`}
-              className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-bold text-white hover:bg-brand-700"
+              className="flex h-10 items-center whitespace-nowrap rounded-lg bg-brand-600 px-4 text-sm font-bold text-white hover:bg-brand-700"
             >
               {site.phone}
             </a>
             <label
               htmlFor="mobile-nav"
               aria-label="פתיחת תפריט ניווט"
-              className="cursor-pointer rounded-lg border border-slate-200 p-2 text-navy-900 md:hidden"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-slate-200 text-navy-900 md:hidden"
             >
               <svg
                 viewBox="0 0 24 24"
