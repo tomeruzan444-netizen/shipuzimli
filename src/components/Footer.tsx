@@ -1,10 +1,12 @@
 import { site, serviceGroups, corePages, legalPages } from "@/config/site";
 import { getPageKeyword } from "@/lib/content";
+import ReviewsSlider from "@/components/ReviewsSlider";
 
 export default function Footer() {
   return (
     <footer className="mt-16 bg-navy-950 text-slate-300">
       <div className="mx-auto max-w-6xl px-4 py-12">
+        <ReviewsSlider />
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {serviceGroups.map((group) => (
             <nav key={group.title} aria-label={group.title}>
