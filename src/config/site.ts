@@ -23,6 +23,7 @@ export const site = {
   email: "shiputzli@gmail.com",
   founder: "שלומי השיפוצניק",
   founderYears: 20,
+  facebook: "https://www.facebook.com/shiputzimli/",
   description:
     "שיפוצים לי - הפלטפורמה שמנגישה את כל סוגי השיפוצים: קבלני שיפוצים בכל הארץ, מידע מקיף ומחירים מעודכנים לכל שירות, וקביעת פגישות עם בעלי מקצוע.",
 } as const;

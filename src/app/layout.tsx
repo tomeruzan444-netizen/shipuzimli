@@ -57,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             areaServed: { "@type": "Country", name: "ישראל" },
             founder: { "@type": "Person", name: site.founder },
             priceRange: "₪₪",
+            sameAs: [site.facebook],
           }}
         />
       </body>
