@@ -172,6 +172,7 @@ export const serviceGroups: ServiceGroup[] = [
       "renovation-contractor-netanya",
       "renovation-contractor-beer-sheva",
       "renovation-contractor-ramat-gan",
+      "renovation-contractor-holon",
       "renovation-contractor-bat-yam",
       "renovation-contractor-herzliya",
       "renovation-contractor-hod-hasharon",
