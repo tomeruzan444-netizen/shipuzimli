@@ -45,6 +45,8 @@ export const serviceGroups: ServiceGroup[] = [
       "bedroom-renovation",
       "apartment-splitting",
       "security-door-installation",
+      "door-repair",
+      "door-repair-tel-aviv",
     ],
   },
   {
