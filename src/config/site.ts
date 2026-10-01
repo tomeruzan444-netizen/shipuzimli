@@ -86,6 +86,7 @@ export const serviceGroups: ServiceGroup[] = [
       "apartment-painting-rishon-lezion",
       "apartment-painting-herzliya",
       "apartment-painting-hod-hasharon",
+      "apartment-painting-ramat-hasharon",
       "apartment-painting-kfar-saba",
       "apartment-painting-netanya",
       "apartment-painting-hadera",
