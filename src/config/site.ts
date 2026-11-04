@@ -47,6 +47,7 @@ export const serviceGroups: ServiceGroup[] = [
       "security-door-installation",
       "door-repair",
       "door-repair-tel-aviv",
+      "door-repair-ramat-gan",
     ],
   },
   {
@@ -82,6 +83,7 @@ export const serviceGroups: ServiceGroup[] = [
       "apartment-painting-holon",
       "apartment-painting-bat-yam",
       "apartment-painting-petah-tikva",
+      "apartment-painting-rosh-haayin",
       "apartment-painting-kiryat-ono",
       "apartment-painting-or-yehuda",
       "apartment-painting-rishon-lezion",
