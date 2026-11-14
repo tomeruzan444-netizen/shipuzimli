@@ -17,6 +17,13 @@ export interface PageFrontmatter {
     note?: string;
     rows: { item: string; price: string; note?: string }[];
   };
+  // אינפוגרפיקה ויזואלית (נטענת כמו prices): שלבי עבודה, השוואת עלות או גורמי מחיר
+  infographic?: {
+    title?: string;
+    type?: "steps" | "bars" | "factors";
+    note?: string;
+    items: { label: string; value?: string; note?: string; pct?: number }[];
+  };
   faq?: { q: string; a: string }[];
 }
 
