@@ -160,6 +160,7 @@
 - **Windows:** הרצת סקריפטים עם `PYTHONUTF8=1 python3 - <<'PY'` (heredoc) כדי שעברית לא תישבר בקונסול.
 - **צ'ק-ליסט התוכן המלא:** ב-CLAUDE.md, סעיף "צ'ק-ליסט עמוד תוכן". מחייב בכל עמוד.
 - **כללי ברזל:** (1) אסור לשנות slug/URL קיים לעולם. (2) אסור להעלות עמוד עם תוכן כפול — בדיקה מול סעיף 3/4 לפני יצירה.
+- **דוח שבועי אוטומטי (routine):** קיים routine ענן "Shipuzimli Weekly SEO Report" (`trig_01588SsbYNWsPQAdRkd6aPr6`) שרץ כל יום ראשון 07:00 UTC (≈09:00 ישראל), מרכיב דוח מ-git log + OPTIMIZATION-LOG ושולח במייל ל-tomeruzan444@gmail.com דרך Gmail (הרשאות מינימום: Gmail בלבד). **לא ליצור routine כפול.** ניהול: claude.ai/code/routines/trig_01588SsbYNWsPQAdRkd6aPr6
 
 ---
 
