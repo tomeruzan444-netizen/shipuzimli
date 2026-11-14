@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Sidebar from "@/components/Sidebar";
 import PriceTable from "@/components/PriceTable";
 import Infographic from "@/components/Infographic";
+import RenovationCalculator from "@/components/RenovationCalculator";
 import FaqAccordion from "@/components/FaqAccordion";
 import Callout from "@/components/Callout";
 import JsonLd from "@/components/JsonLd";
@@ -94,6 +95,7 @@ export default async function ContentPage({
               components={{
                 PriceTable: () => (fm.prices ? <PriceTable prices={fm.prices} /> : null),
                 Infographic: () => (fm.infographic ? <Infographic data={fm.infographic} /> : null),
+                RenovationCalculator: () => <RenovationCalculator />,
                 Callout,
                 h2: (props) => {
                   const id = headings[headingIndex++]?.id;
