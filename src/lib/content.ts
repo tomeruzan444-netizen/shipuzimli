@@ -17,10 +17,12 @@ export interface PageFrontmatter {
     note?: string;
     rows: { item: string; price: string; note?: string }[];
   };
-  // אינפוגרפיקה ויזואלית (נטענת כמו prices): שלבי עבודה, השוואת עלות או גורמי מחיר
+  // אינפוגרפיקה ויזואלית (נטענת כמו prices). שש תצוגות - יש לגוון ביניהן בין עמוד לעמוד:
+  // steps (שלבי עבודה), bars (השוואת עלות/היקף), factors (גורמי מחיר),
+  // stats (נתוני מפתח בולטים), timeline (לוח זמנים לפרויקט), checklist (מה כולל / על מה לשים לב)
   infographic?: {
     title?: string;
-    type?: "steps" | "bars" | "factors";
+    type?: "steps" | "bars" | "factors" | "stats" | "timeline" | "checklist";
     note?: string;
     items: { label: string; value?: string; note?: string; pct?: number }[];
   };
