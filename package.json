@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "ai-tells": "node scripts/ai-tells.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
