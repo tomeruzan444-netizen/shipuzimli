@@ -8,6 +8,7 @@ import Infographic from "@/components/Infographic";
 import RenovationCalculator from "@/components/RenovationCalculator";
 import FaqAccordion from "@/components/FaqAccordion";
 import Callout from "@/components/Callout";
+import ProjectImage from "@/components/ProjectImage";
 import JsonLd from "@/components/JsonLd";
 import ContactPage, { contactMeta } from "@/components/ContactPage";
 import { AuthorBox, ReviewedByLine } from "@/components/AuthorBox";
@@ -97,6 +98,7 @@ export default async function ContentPage({
                 Infographic: () => (fm.infographic ? <Infographic data={fm.infographic} /> : null),
                 RenovationCalculator: () => <RenovationCalculator />,
                 Callout,
+                ProjectImage,
                 h2: (props) => {
                   const id = headings[headingIndex++]?.id;
                   return <h2 id={id} className="scroll-mt-6" {...props} />;

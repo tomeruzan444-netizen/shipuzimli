@@ -55,6 +55,16 @@ const HIGHLIGHTS = [
   { icon: "smile" as const, title: "שירות עם חיוך", text: "ליווי אישי של שלומי וצוותו לאורך כל הדרך" },
 ];
 
+/** פרויקטים אמיתיים לגלריית לפני ואחרי בעמוד הבית (כולם ביחס 3:2 לאחידות) */
+const PROJECTS: { slug: string; title: string; alt: string }[] = [
+  { slug: "bathroom-renovation", title: "שיפוץ אמבטיה", alt: "חדר אמבטיה לפני ואחרי שיפוץ" },
+  { slug: "wall-demolition", title: "פתיחת קיר וסלון", alt: "פתיחת קיר בין מטבח לסלון לפני ואחרי" },
+  { slug: "apartment-renovation", title: "שיפוץ דירה", alt: "סלון לפני ואחרי שיפוץ דירה" },
+  { slug: "bedroom-renovation", title: "שיפוץ חדר שינה", alt: "חדר שינה לפני ואחרי שיפוץ" },
+  { slug: "tiling-works", title: "עבודות ריצוף", alt: "רצפה לפני ואחרי ריצוף" },
+  { slug: "drywall-works", title: "עבודות גבס", alt: "קיר גבס לטלוויזיה לפני ואחרי" },
+];
+
 export default function HomePage() {
   const serviceGroupsOnly = serviceGroups.filter((g) => g.title !== CITY_GROUP_TITLE);
   const cityGroup = serviceGroups.find((g) => g.title === CITY_GROUP_TITLE);
@@ -199,6 +209,45 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-2 text-sm font-bold text-brand-600">לפני ואחרי</p>
+            <h2 className="text-3xl font-black text-navy-900 md:text-4xl">
+              פרויקטים אמיתיים שביצענו
+            </h2>
+            <p className="mt-3 text-ink-500">
+              כמה דוגמאות מהשטח, מאמבטיה ומטבח ועד גבס וריצוף. לחצו על פרויקט כדי לקרוא על
+              העבודה ועל המחירים.
+            </p>
+          </div>
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((p) => (
+              <li key={p.slug}>
+                <a
+                  href={`/${p.slug}`}
+                  className="group block overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-navy-700 hover:shadow-md"
+                >
+                  <img
+                    src={`/images/projects/${p.slug}.webp`}
+                    alt={p.alt}
+                    width={1280}
+                    height={853}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full"
+                  />
+                  <div className="flex items-center justify-between gap-2 p-4">
+                    <span className="font-bold text-navy-900">{p.title}</span>
+                    <span className="text-sm font-bold text-brand-600">לפרטים</span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid items-center gap-12 md:grid-cols-2">
